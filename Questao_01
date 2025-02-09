@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct aluno{
+    int nota1[1];
+    int nota2[1];
+};
+
+int main(){
+    struct aluno notas;
+    puts("Digite a primeira nota: \n");
+    scanf("%d",&notas.nota1[0]);
+
+    puts("Agora a segunda nota: \n");
+    scanf("%d",&notas.nota2[0]);
+
+    int media = (notas.nota1[0]+notas.nota2[0])/2;
+
+    printf("Média do aluno = %d",media);
+}
