@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct aluno{
+    int nota1[3];
+    int nota2[3];
+    float mediaa[3];
+};
+
+float calcMedia(int nota1,int nota2){
+    float media = (nota1+nota2)/2.0;
+    return media;
+}
+int main(){
+    struct aluno notas;
+    for(int i = 0;i<3;i++){
+        puts("Digite a primeira nota: \n");
+        scanf("%d",&notas.nota1[i]);
+    
+        puts("Agora a segunda nota: \n");
+        scanf("%d",&notas.nota2[i]);
+        notas.mediaa[i] = calcMedia(notas.nota1[i],notas.nota2[i]);
+    }
+    for(int i = 0;i < 3;i++){
+        printf("Média do aluno = %.2f",notas.mediaa[i]);
+    }
+}
