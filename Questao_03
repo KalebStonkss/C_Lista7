@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+struct dados{
+    int *pmatriz;
+    int qElementos;
+    float media;
+};
+
+float calcMedia(int *pmatriz,int qElementos){
+    int soma = 0;
+    for(int i = 0;i<qElementos;i++){
+        soma += pmatriz[i];
+    }
+    float media = (float)soma/qElementos;
+    return media;
+}
+int main(){
+    struct dados matriz;
+    int n;
+    int *pn = &n;
+
+    puts("Digite a quantidade de elementos do vetor: \n");
+    scanf("%d",pn);
+
+    matriz.pmatriz = (int *)malloc(n * sizeof(int));
+    if(matriz.pmatriz == NULL){
+        printf("Erro! Houve falha ao alocar memória :(");
+        return 1;
+    }
+
+    matriz.qElementos = *pn;
+
+    srand(time(NULL));
+    for(int i =0;i<matriz.qElementos;i++){
+        matriz.pmatriz[i] = rand() % 100;
+    }
+
+    matriz.media = calcMedia(matriz.pmatriz,matriz.qElementos);
+
+    printf("Vetor resultante: \n");
+    for(int i = 0;i<matriz.qElementos;i++){
+        printf("|%d|",matriz.pmatriz[i]);
+    }
+
+    printf("\nMédia: \n");
+    printf("%.2f",matriz.media);
+
+    free(matriz.pmatriz);
+
+    return 0;
+}
