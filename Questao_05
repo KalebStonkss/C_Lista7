@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+struct professor{
+    char nomeProfessor[50];
+    int idade;
+    int idProfessor;
+};
+struct disciplina{
+    char nomeDisciplina[20];
+    int semestre;
+    int idDisciplina;
+    struct professor p;
+};
+int main(){
+    struct disciplina d;
+    puts("Digite o nome da disciplina: \n");
+    fgets(d.nomeDisciplina,sizeof(d.nomeDisciplina),stdin);
+
+    puts("Digite o nome do professor: \n");
+    fgets(d.p.nomeProfessor,sizeof(d.p.nomeProfessor),stdin);
+
+    puts("Digite o semestre da disciplina: \n");
+    scanf("%d",&d.semestre);
+
+    puts("Digite o ID da disciplina: \n");
+    scanf("%d",&d.idDisciplina);
+
+    puts("Digite a idade do professor: \n");
+    scanf("%d",&d.p.idade);
+
+    puts("Digite o ID do professor: \n");
+    scanf("%d",&d.p.idProfessor);
+
+    printf("Disciplina: %s \n Professor: %s \n Semestre: %d \n ID da disciplina: %d \n Idade do professor: %d \n ID do professor: %d",d.nomeDisciplina,d.p.nomeProfessor,d.semestre,d.idDisciplina,d.p.idade,d.p.idProfessor);
+}
