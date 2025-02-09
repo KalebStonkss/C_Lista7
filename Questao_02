@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct estoque{
+    char nomePeca[50];
+    int numPeca[1];
+    float precoPeca[1];
+    int numPedido[1];
+};
+
+int main(){
+    struct estoque requisicao;
+
+    puts("Digite o nome da peça: \n");
+    fgets(requisicao.nomePeca,sizeof(requisicao.nomePeca),stdin);
+
+    puts("Digite o número de identificação da peça: \n");
+    scanf("%d",&requisicao.numPeca[0]);
+
+    puts("Digite o preço da peça: \n");
+    scanf("%f",&requisicao.precoPeca[0]);
+
+    puts("Digite o número do pedido: \n");
+    scanf("%d",&requisicao.numPedido[0]);
+
+    printf("Nome da peça : %s \n Número de identificação da peça: %d \n Preço da peça: %.2f \n Número do pedido: %d",requisicao.nomePeca,requisicao.numPeca[0],requisicao.precoPeca[0],requisicao.numPedido[0]);
+}
